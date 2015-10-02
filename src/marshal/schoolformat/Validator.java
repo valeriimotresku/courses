@@ -298,7 +298,7 @@ public class Validator {
 		if (modulesInput.isEmpty()) { 
 			return true;
 		}
-		// validate input Module format
+		// validate input collection format
 		this.validateUnitFormat(modulesInput, "Collection", VALID_COLLECTION_FORMAT);
 		
 		// validate each module in collection
@@ -320,11 +320,11 @@ public class Validator {
 		 */
 		course = course.trim();
 		// empty means null. See docs. That will exist in future :)
-		// Module could has null value
+		// Course could has null value
 		if (course.isEmpty()) { 
 			return true;
 		}
-		// validate input Module format
+		// validate input Course format
 		this.validateUnitFormat(course, "Course", VALID_COURSE_FORMAT);
 		
 		// validate fields
@@ -334,7 +334,7 @@ public class Validator {
 		// indexes:
 		// 0-name, 1-dateStart, 2-dateEnd, 3-modules(Collection)
 		this.validateUnitFields(courseFields);
-		//parse modules from modules collection input
+		//validate modules from modules collection input
 		//cut []-inner structure format symbols
 		this.validateModules(StringOperator.trimLips(courseFields[3]));
 		return true;
