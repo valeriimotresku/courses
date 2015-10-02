@@ -1,0 +1,21 @@
+module pattern:
+	name:dateStart:dateEnd:[]; []-test here
+	optional: dates, test fields
+
+test pattern:
+	name:dateStart:dateEnd:privateAccess;
+	optional: dates and privateAccess fields
+	local formats:
+		priavteAcces - 'true' or 'false', case insensetive
+
+optional:
+	';' - semicolon at the end of line could be replaced with the 'endOfLine' symbol
+
+formats:
+	date - 'YYYY.MM.DD&hh.mm.ss'
+		optional : time '&hh.mm.ss' is optional
+	[] - inner structure
+
+exmaples:
+	module:
+		Java:2015.10.11:2015.11.11:[Test1:2015.11.11&10.15.30:2015.11.11&10.45.59:true]
